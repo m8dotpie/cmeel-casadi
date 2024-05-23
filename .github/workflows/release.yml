@@ -30,7 +30,7 @@ jobs:
       - name: Install build dependencies
         run: python3 -m pip install cmeel cibuildwheel
       - name: Set python include directory
-        run: echo "PYTHON_INCLUDE_DIR=$(python scripts/install_path.py)" >> $GITHUB_ENV
+        run: echo "PYTHON_INCLUDE_DIR=$(bash scripts/include_dir.sh dockcross/manylinux_2_28-x64 ${{matrix.build[1]}})" >> $GITHUB_ENV
       - run: cibuildwheel --output-dir wh
         env:
           CIBW_BUILD: ${{ matrix.build[0] }}-*
