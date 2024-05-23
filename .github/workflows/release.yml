@@ -8,12 +8,12 @@ jobs:
     runs-on: "${{ matrix.os }}"
     strategy:
       matrix:
-        os: [macos-14]
+        os: [ubuntu-latest]
         build:
           [
-            ["cp39", "python3.9"],
+            # ["cp39", "python3.9"],
             ["cp310", "python3.10"],
-            ["cp311", "python3.11"],
+            # ["cp311", "python3.11"],
           ]
     steps:
       - uses: actions/checkout@v3
