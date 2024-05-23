@@ -8,7 +8,7 @@ jobs:
     runs-on: "${{ matrix.os }}"
     strategy:
       matrix:
-        os: [ubuntu-latest]
+        os: [macos-14]
         build:
           [
             ["cp39", "python3.9"],
@@ -34,7 +34,7 @@ jobs:
       - run: cibuildwheel --output-dir wh
         env:
           CIBW_BUILD: ${{ matrix.build[0] }}-*
-          CIBW_ARCHS: "aarch64"
+          CIBW_LINUX_ARCHS: "aarch64"
           CIBW_MANYLINUX_X86_64_IMAGE: "dockcross/manylinux_2_28-x64"
           CIBW_SKIP: "pp* *-musllinux_*"
           CIBW_BUILD_VERBOSITY: 2
