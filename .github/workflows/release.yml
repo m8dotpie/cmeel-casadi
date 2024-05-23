@@ -42,6 +42,7 @@ jobs:
           CMEEL_TEMP_DIR: /tmp/cmeel_out/
           CMEEL_CMAKE_ARGS: -DPYTHON_INCLUDE_DIR=${{ env.PYTHON_INCLUDE_DIR }} -DPYTHON_PREFIX=/tmp/cmeel_out/whl/cmeel.prefix/lib/${{matrix.build[1]}}/site-packages/
           PYTHON_INCLUDE_DIR: ${{ env.PYTHON_INCLUDE_DIR }}
+          CIBW_REPAIR_WHEEL_COMMAND: ""
       - uses: actions/upload-artifact@v3
         with:
           path: wh
