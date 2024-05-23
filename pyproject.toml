@@ -1,6 +1,6 @@
 [build-system]
 build-backend = "cmeel"
-requires = ["cmeel"]
+requires = ["cmeel", "swig"]
 
 [project]
 description = "cmeel distribution for CasADi - a symbolic framework for numeric optimization"
